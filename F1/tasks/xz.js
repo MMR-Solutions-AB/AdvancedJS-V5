@@ -45,3 +45,21 @@ function concatArray(oldArray, updatedArray) {
   const newArray = [...notUpdated, ...updatedArray];
   return newArray;
 }
+
+
+/* -------------------------------------------- */
+
+
+function whoIsFriend(arr, id) {
+  const user = arr.find(function (user) {
+    return user.id === id;
+  });
+  const friendsArray = [];
+  user.friends.forEach(function (friend) {
+    const [user] = arr.filter(function (user) {
+      return user.id === friend.uid;
+    });
+    friendsArray.push(user);
+  });
+  return friendsArray;
+}

@@ -1,7 +1,7 @@
 /* -------------------------------------------- */
 
 function setTargetOnUser(arr) {
-  arr.map((user) => {
+  arr.map(function (user) {
     return { ...user, isTarget: true };
   });
 }

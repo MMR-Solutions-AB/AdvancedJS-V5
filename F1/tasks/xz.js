@@ -1,4 +1,3 @@
-
 /* -------------------------------------------- */
 
 const criteria = {
@@ -37,11 +36,12 @@ function concatArray(oldArray, updatedArray) {
   updatedArray.forEach(function (user) {
     userIdList.push(user.id);
   });
-  let newArray = [];
+  let notUpdated = [];
   oldArray.forEach(function (user, index) {
     if (user.id !== userIdList[index]) {
       newArray.push(user);
     }
   });
+  const newArray = [...notUpdated, ...updatedArray];
   return newArray;
 }

@@ -1,7 +1,7 @@
 /* -------------------------------------------- */
 
 function findUserById(arr, id) {
-  const user = arr.find((user) => {
+  const user = arr.find(function(user){
     return user.id === id;
   });
   return user;
@@ -10,7 +10,7 @@ function findUserById(arr, id) {
 /* -------------------------------------------- */
 
 function changeAge(arr, id) {
-  const newArr = arr.map((user) => {
+  const newArr = arr.map(function(user){
     if (user.id === id) {
       return { ...user, age: 31 };
     } else {
